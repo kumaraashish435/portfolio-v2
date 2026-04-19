@@ -1,30 +1,39 @@
 import { afterNextRender, Component, ElementRef, inject, signal, viewChild } from '@angular/core';
 import gsap from 'gsap';
-import { PaintingDto, PaintingsApiService } from '../../services/paintings-api.service';
+import { PaintingDto, PaintingsService } from '../../services/paintings.service';
 
 @Component({
   selector: 'app-paintings',
-  imports: [],
+  standalone: true,
   templateUrl: './paintings.html',
   styleUrl: './paintings.css',
 })
 export class Paintings {
-  private readonly api = inject(PaintingsApiService);
+  private readonly dataService = inject(PaintingsService);
   private readonly root = viewChild<ElementRef<HTMLElement>>('paintings');
 
   protected readonly items = signal<PaintingDto[]>([]);
 
   constructor() {
-    this.items.set(this.api.list()());
+    //  get data from service
+    this.items.set(this.dataService.list());
 
     afterNextRender(() => {
       const host = this.root()?.nativeElement;
       if (!host) return;
+
       const cards = host.querySelectorAll('[data-painting-card]');
       gsap.fromTo(
         cards,
         { opacity: 0, y: 30, scale: 0.95 },
-        { opacity: 1, y: 0, scale: 1, duration: 0.6, stagger: 0.1, ease: 'power2.out' },
+        {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          duration: 0.6,
+          stagger: 0.1,
+          ease: 'power2.out',
+        }
       );
     });
   }
@@ -36,14 +45,13 @@ export class Paintings {
   }
 
   protected onImageClick(painting: PaintingDto): void {
-    // You could implement a lightbox or modal here
     console.log('Painting clicked:', painting.title);
   }
 
   private hoverCard(el: HTMLElement, over: boolean): void {
     const image = el.querySelector('[data-painting-image]') as HTMLElement;
     const overlay = el.querySelector('[data-painting-overlay]') as HTMLElement;
-    
+
     gsap.to(el, {
       y: over ? -8 : 0,
       scale: over ? 1.02 : 1,
