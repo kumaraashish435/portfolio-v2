@@ -1,0 +1,52 @@
+<main #paintings class="paintings-container">
+  <header class="paintings-header">
+    <h1 class="paintings-title">My Paintings</h1>
+    <p class="paintings-subtitle">A collection of original artworks exploring color, form, and emotion</p>
+  </header>
+
+  <section class="paintings-grid">
+    @for (painting of items(); track painting.id) {
+      <article 
+        class="painting-card"
+        data-painting-card
+        (mouseenter)="onCardHover($event, true)"
+        (mouseleave)="onCardHover($event, false)"
+        (click)="onImageClick(painting)"
+      >
+        <div class="painting-image-container">
+          <img 
+            data-painting-image
+            [src]="painting.imageUrl" 
+            [alt]="painting.title"
+            class="painting-image"
+            loading="lazy"
+          />
+          <div data-painting-overlay class="painting-overlay">
+            <div class="painting-overlay-content">
+              <h3 class="painting-overlay-title">{{ painting.title }}</h3>
+              <p class="painting-overlay-description">{{ painting.description }}</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="painting-info">
+          <h2 class="painting-title">{{ painting.title }}</h2>
+          <div class="painting-meta">
+            @if (painting.year) {
+              <span class="painting-year">{{ painting.year }}</span>
+            }
+            @if (painting.medium) {
+              <span class="painting-medium">{{ painting.medium }}</span>
+            }
+          </div>
+        </div>
+      </article>
+    }
+  </section>
+
+  @if (items().length === 0) {
+    <div class="paintings-empty">
+      <p>No paintings to display yet. Check back soon!</p>
+    </div>
+  }
+</main>

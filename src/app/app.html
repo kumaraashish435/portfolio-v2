@@ -1,0 +1,111 @@
+<div
+  id="app-loader"
+  class="fixed inset-0 z-[100] flex items-center justify-center bg-[#f5f5f5] text-black dark:bg-black dark:text-white"
+  aria-hidden="true"
+>
+  <div class="flex flex-col items-center gap-3">
+    <div
+      class="h-8 w-8 animate-spin rounded-full border-2 border-black/20 border-t-black dark:border-white/25 dark:border-t-white"
+    ></div>
+    <p class="text-xs tracking-[0.2em] text-[#888]">LOADING</p>
+  </div>
+</div>
+
+<div
+  class="min-h-screen bg-[#f5f5f5] text-black transition-colors duration-300 dark:bg-black dark:text-white"
+>
+  <header
+    class="sticky top-0 z-50 border-b border-black/10 bg-[#f5f5f5]/90 backdrop-blur dark:border-white/10 dark:bg-black/80"
+  >
+    <div class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-4 md:px-6">
+      <a routerLink="/" class="group flex flex-col leading-tight">
+        <span class="text-sm font-semibold tracking-tight">Aashish Kumar</span>
+        <span class="text-[11px] text-[#888] group-hover:text-black dark:group-hover:text-white"
+          >Software Engineer</span
+        >
+      </a>
+
+      <nav class="hidden items-center gap-8 text-sm md:flex">
+        <a
+          routerLink="/"
+          routerLinkActive="text-black dark:text-white"
+          [routerLinkActiveOptions]="{ exact: true }"
+          class="text-[#888] transition hover:text-black dark:hover:text-white"
+          >Home</a
+        >
+        <a
+          routerLink="/about"
+          routerLinkActive="text-black dark:text-white"
+          class="text-[#888] transition hover:text-black dark:hover:text-white"
+          >About</a
+        >
+        <a
+          routerLink="/projects"
+          routerLinkActive="text-black dark:text-white"
+          class="text-[#888] transition hover:text-black dark:hover:text-white"
+          >Projects</a
+        >
+        <a
+          routerLink="/paintings"
+          routerLinkActive="text-black dark:text-white"
+          class="text-[#888] transition hover:text-black dark:hover:text-white"
+          >Paintings</a
+        >
+        <a
+          routerLink="/contact"
+          routerLinkActive="text-black dark:text-white"
+          class="text-[#888] transition hover:text-black dark:hover:text-white"
+          >Contact</a
+        >
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <button
+          type="button"
+          (click)="theme.toggle()"
+          class="rounded border border-black/15 px-3 py-1.5 text-xs uppercase tracking-wider text-[#888] transition hover:border-black hover:text-black dark:border-white/15 dark:hover:border-white dark:hover:text-white"
+          [attr.aria-label]="theme.isLight() ? 'Switch to dark mode' : 'Switch to light mode'"
+        >
+          {{ theme.isLight() ? 'Dark' : 'Light' }}
+        </button>
+
+        <button
+          type="button"
+          class="inline-flex h-9 w-9 items-center justify-center rounded border border-black/15 md:hidden dark:border-white/15"
+          (click)="toggleMenu()"
+          aria-label="Toggle menu"
+        >
+          <span class="sr-only">Menu</span>
+          <span class="flex flex-col gap-1">
+            <span class="block h-px w-4 bg-current"></span>
+            <span class="block h-px w-4 bg-current"></span>
+            <span class="block h-px w-4 bg-current"></span>
+          </span>
+        </button>
+      </div>
+    </div>
+
+    <div
+      class="border-t border-black/10 bg-[#f5f5f5] px-4 py-3 md:hidden dark:border-white/10 dark:bg-black"
+      [ngClass]="{ hidden: !menuOpen() }"
+    >
+      <nav class="flex flex-col gap-3 text-sm">
+        <a routerLink="/" (click)="menuOpen.set(false)">Home</a>
+        <a routerLink="/about" (click)="menuOpen.set(false)">About</a>
+        <a routerLink="/projects" (click)="menuOpen.set(false)">Projects</a>
+        <a routerLink="/paintings" (click)="menuOpen.set(false)">Paintings</a>
+        <a routerLink="/contact" (click)="menuOpen.set(false)">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main #page class="mx-auto max-w-6xl px-4 pb-16 pt-10 md:px-6 md:pt-14">
+    <router-outlet />
+  </main>
+
+  <footer
+    class="border-t border-black/10 py-8 text-center text-xs text-[#888] dark:border-white/10"
+  >
+    <p>Built with .NET 9, Angular, PostgreSQL, and clean architecture.</p>
+  </footer>
+</div>
