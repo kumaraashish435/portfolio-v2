@@ -12,6 +12,7 @@ import gsap from 'gsap';
 import { filter } from 'rxjs';
 import { ThemeService } from './services/theme.service';
 
+
 @Component({
   selector: 'app-root',
   imports: [RouterOutlet, RouterLink, RouterLinkActive, NgClass],
@@ -21,10 +22,13 @@ import { ThemeService } from './services/theme.service';
 export class App implements AfterViewInit {
   protected readonly theme = inject(ThemeService);
   private readonly router = inject(Router);
+  
 
   private readonly page = viewChild<ElementRef<HTMLElement>>('page');
   protected readonly menuOpen = signal(false);
 
+  currentYear = new Date().getFullYear();
+  
   ngAfterViewInit(): void {
     gsap.to('#app-loader', {
       autoAlpha: 0,

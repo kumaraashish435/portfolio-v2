@@ -16,7 +16,7 @@ export class PaintingsService {
       id: '1',
       title: 'Sunset Dreams',
       description: 'A vibrant exploration of warm colors capturing the essence of twilight',
-      imageUrl: '/assets/paintings/sunset-dreams.jpg',
+      imageUrl: '/assets/paintings/abstract1.jpg',
       year: '2024',
       medium: 'Oil on Canvas'
     },
@@ -24,7 +24,7 @@ export class PaintingsService {
       id: '2',
       title: 'Urban Rhythm',
       description: 'Abstract interpretation of city life and movement',
-      imageUrl: '/assets/paintings/urban-rhythm.jpg',
+      imageUrl: '/assets/paintings/abstract2.jpg',
       year: '2024',
       medium: 'Acrylic on Canvas'
     },
@@ -32,7 +32,7 @@ export class PaintingsService {
       id: '3',
       title: "Nature's Whisper",
       description: 'Delicate brushwork celebrating the subtleties of natural forms',
-      imageUrl: '/assets/paintings/natures-whisper.jpg',
+      imageUrl: '/assets/paintings/abstract3.jpg',
       year: '2023',
       medium: 'Watercolor'
     },
@@ -40,7 +40,7 @@ export class PaintingsService {
       id: '4',
       title: 'Geometric Harmony',
       description: 'Mathematical precision meets artistic expression',
-      imageUrl: '/assets/paintings/geometric-harmony.jpg',
+      imageUrl: '/assets/paintings/abstract4.jpeg',
       year: '2023',
       medium: 'Mixed Media'
     },
@@ -48,7 +48,7 @@ export class PaintingsService {
       id: '5',
       title: 'Emotional Landscape',
       description: 'An inner journey expressed through color and form',
-      imageUrl: '/assets/paintings/emotional-landscape.jpg',
+      imageUrl: '/assets/paintings/abstract5.jpeg',
       year: '2024',
       medium: 'Oil on Canvas'
     },
@@ -56,7 +56,7 @@ export class PaintingsService {
       id: '6',
       title: 'Silent Contemplation',
       description: 'Minimalist approach to profound themes',
-      imageUrl: '/assets/paintings/silent-contemplation.jpg',
+      imageUrl: '/assets/paintings/abstract6.jpg',
       year: '2023',
       medium: 'Charcoal and Pastel'
     }
