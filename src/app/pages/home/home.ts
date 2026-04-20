@@ -14,22 +14,22 @@ export class Home {
   protected readonly typed = signal('');
 
   protected readonly tech = [
-    { abbr: 'C++', name: 'C++' },
-    { abbr: 'PY', name: 'Python' },
-    { abbr: 'C#', name: 'C#' },
-    { abbr: '.NET', name: '.NET' },
-    { abbr: 'NG', name: 'Angular' },
-    { abbr: 'TS', name: 'TypeScript' },
-    { abbr: 'PG', name: 'PostgreSQL' },
-    { abbr: 'GL', name: 'OpenGL' },
-  ];
+  { icon: 'devicon-cplusplus-plain', name: 'C++' },
+  { icon: 'devicon-python-plain', name: 'Python' },
+  { icon: 'devicon-csharp-plain', name: 'C#' },
+  { icon: 'devicon-dotnetcore-plain', name: '.NET' },
+  { icon: 'devicon-angularjs-plain', name: 'Angular' },
+  { icon: 'devicon-typescript-plain', name: 'TypeScript' },
+  { icon: 'devicon-postgresql-plain', name: 'PostgreSQL' },
+  { icon: 'devicon-opengl-plain', name: 'OpenGL' }
+];
 
   private readonly phrases = [
     'Building scalable systems…',
-    'Designing resilient APIs…',
-    'Shipping clean architecture…',
-    'Tuning performance…',
-    'Orchestrating AI workflows…',
+    'Designing clean APIs…',
+    'Improving performance…',
+    'Learning AI/ML with Kaggle…',
+    'Exploring game development (SDL3, C++ & Unity)…',
   ];
 
   constructor() {

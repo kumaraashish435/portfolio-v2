@@ -21,47 +21,63 @@ export class PaintingsService {
       description: 'A vibrant exploration of warm colors capturing the essence of twilight',
       imageUrl: `${BASE}abstract1.jpg`,
       year: '2024',
-      medium: 'Oil on Canvas'
+      medium: 'Acrylic on Paper'
     },
     {
       id: '2',
-      title: 'Urban Rhythm',
-      description: 'Abstract interpretation of city life and movement',
+      title: 'Fragmented Reality',
+      description: 'An abstract composition exploring human interaction with technology and fragmented digital environments.',
       imageUrl: `${BASE}abstract2.jpg`,
       year: '2024',
-      medium: 'Acrylic on Canvas'
+      medium: 'Acrylic on Paper'
     },
     {
       id: '3',
-      title: "Nature's Whisper",
-      description: 'Delicate brushwork celebrating the subtleties of natural forms',
+      title: "Unseen Emotions",
+      description: 'A surreal expression of hidden identity and emotion through fluid forms and color bursts.',
       imageUrl: `${BASE}abstract3.jpg`,
       year: '2023',
-      medium: 'Watercolor'
+      medium: 'Acrylic on Paper'
     },
     {
       id: '4',
-      title: 'Geometric Harmony',
-      description: 'Mathematical precision meets artistic expression',
+      title: 'Vibrant Majesty',
+      description: 'A bold depiction of a peacock symbolizing beauty, confidence, and natural elegance.',
       imageUrl: `${BASE}abstract4.jpeg`,
       year: '2023',
-      medium: 'Mixed Media'
+      medium: 'Acrylic, Mixed Media'
     },
     {
       id: '5',
-      title: 'Emotional Landscape',
-      description: 'An inner journey expressed through color and form',
+      title: 'Chaos & Structure',
+      description: 'A high-energy abstract piece balancing disorder and form through layered textures and strokes.',
       imageUrl: `${BASE}abstract5.jpeg`,
       year: '2024',
-      medium: 'Oil on Canvas'
+      medium: 'Acrylic on Paper'
     },
     {
       id: '6',
-      title: 'Silent Contemplation',
-      description: 'Minimalist approach to profound themes',
+      title: 'Divine Rhythm',
+      description: 'A stylized portrayal inspired by spiritual harmony, music, and inner peace.',
       imageUrl: `${BASE}abstract6.jpg`,
       year: '2023',
-      medium: 'Charcoal and Pastel'
+      medium: 'oil and Pastel'
+    },
+    {
+      id: '7',
+      title: 'Curious Soul',
+      description: 'A playful and detailed sketch blending realism and imagination in a whimsical composition.',
+      imageUrl: `${BASE}catsketch.jpg`,
+      year: '2023',
+      medium: 'pen and pencil'
+    },
+    {
+      id: '8',
+      title: 'Quiet Expression',
+      description: 'A detailed pen sketch capturing subtle emotion and personality through fine line work.',
+      imageUrl: `${BASE}porttraitsketch.webp`,
+      year: '2023',
+      medium: 'pen and pencil'
     }
   ];
 

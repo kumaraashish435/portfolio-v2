@@ -65,7 +65,7 @@ export class Contact {
       `Name: ${v.name}\nEmail: ${v.email}\n\nMessage:\n${v.message}`
     );
 
-    // Simulate sending delay (for UX)
+    
     setTimeout(() => {
       window.location.href = `mailto:kumaraashishcr435@gmail.com?subject=${subject}&body=${body}`;
 

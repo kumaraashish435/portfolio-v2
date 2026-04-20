@@ -4,74 +4,58 @@
       <p class="text-xs uppercase tracking-[0.35em] text-[#888]" data-reveal>Portfolio</p>
       <h1 class="text-4xl font-semibold leading-tight md:text-5xl" data-reveal>Aashish Kumar</h1>
       <p class="text-lg text-[#888] md:text-xl" data-reveal>
-        Software Engineer <span class="text-black dark:text-white">|</span> AI &amp; Systems Developer
+        Software Engineer <span class="text-black dark:text-white">|</span> AI &amp; Game Developer
       </p>
     </div>
 
     <p class="max-w-xl text-sm leading-relaxed text-black/80 dark:text-white/80" data-reveal>
-      Enterprise engineer at HCL Technologies — shipping reliable applications, debugging complex systems,
-      leading migrations, and integrating AI/LLM workflows. Focused on clean code, scalability, and
-      pragmatic system design across backend, APIs, and performance-sensitive paths.
+      Software Engineer at HCL Technologies — Building reliable applications, APIs, debugging systems.
+      Currently expanding into AI/ML through Kaggle and exploring game development using SDL3, Unity (C#), and C++.
+      I enjoy building things with code and constantly exploring new ideas and technologies.
     </p>
 
-    <div
-      class="min-h-[1.5rem] font-mono text-sm text-[#888]"
-      data-reveal
-      aria-live="polite"
-    >
+    <div class="min-h-[1.5rem] font-mono text-sm text-[#888]" data-reveal aria-live="polite">
       <span class="text-black dark:text-white">$</span>
       <span class="ml-2">{{ typed() }}</span>
       <span class="ml-0.5 inline-block h-4 w-2 translate-y-0.5 bg-current animate-pulse"></span>
     </div>
 
     <div class="flex flex-wrap gap-3" data-reveal>
-      <a
-        routerLink="/projects"
-        class="rounded border border-black bg-black px-5 py-2 text-xs font-medium uppercase tracking-wider text-white transition hover:bg-transparent hover:text-black dark:border-white dark:bg-white dark:text-black dark:hover:bg-transparent dark:hover:text-white"
-        >Projects</a
-      >
-      <a
-        routerLink="/contact"
-        class="rounded border border-black/20 px-5 py-2 text-xs font-medium uppercase tracking-wider text-[#888] transition hover:border-black hover:text-black dark:border-white/20 dark:hover:border-white dark:hover:text-white"
-        >Contact</a
-      >
+      <a routerLink="/projects"
+        class="rounded border border-black bg-black px-5 py-2 text-xs font-medium uppercase tracking-wider text-white transition hover:bg-transparent hover:text-black dark:border-white dark:bg-white dark:text-black dark:hover:bg-transparent dark:hover:text-white">Projects</a>
+      <a routerLink="/contact"
+        class="rounded border border-black/20 px-5 py-2 text-xs font-medium uppercase tracking-wider text-[#888] transition hover:border-black hover:text-black dark:border-white/20 dark:hover:border-white dark:hover:text-white">Contact</a>
     </div>
   </div>
 
   <aside class="space-y-6">
     <div
       class="rounded border border-black/10 bg-white p-4 text-xs shadow-sm dark:border-white/10 dark:bg-black dark:shadow-none"
-      data-reveal
-    >
-      <div class="mb-3 flex items-center justify-between text-[#888]">
-        <span>terminal</span>
-        <span class="text-[10px] uppercase tracking-widest">~/portfolio</span>
-      </div>
-      <pre
-        class="overflow-x-auto font-mono text-[11px] leading-relaxed text-black/90 dark:text-white/90"
-      ><code>dotnet run --project src/Portfolio.Api
-info: listening on http://localhost:5012
-info: GET /api/projects → 200 OK
-info: POST /api/contact → 202 Accepted
+      data-reveal>
 
-<span class="text-[#888]"># stack</span>
-api: .NET 9 Web API + EF Core + PostgreSQL
-ui:  Angular + Tailwind + GSAP</code></pre>
     </div>
 
     <div data-reveal>
-      <p class="mb-3 text-xs uppercase tracking-[0.25em] text-[#888]">Tech stack</p>
-      <div class="grid grid-cols-4 gap-2 sm:grid-cols-8">
-        @for (t of tech; track t.abbr) {
-          <div
-            class="flex flex-col items-center gap-2 rounded border border-black/10 bg-white px-2 py-3 text-center dark:border-white/10 dark:bg-black"
-            [title]="t.name"
-          >
-            <span class="text-[10px] font-semibold">{{ t.abbr }}</span>
-            <span class="hidden text-[9px] text-[#888] sm:inline">{{ t.name }}</span>
-          </div>
+      <p class="mb-3 text-xs uppercase tracking-[0.25em] text-[#888]">
+        Tech stack
+      </p>
+
+      <div class="grid grid-cols-4 gap-4 sm:grid-cols-8">
+        @for (t of tech; track t.name) {
+        <div
+          class="flex flex-col items-center gap-2 rounded border border-black/10 bg-white px-8 py-3 text-center transition hover:shadow-md dark:border-white/10 dark:bg-black"
+          [title]="t.name">
+          <!-- ICON -->
+          <i [class]="t.icon + ' text-2xl'"></i>
+
+          <!-- NAME -->
+          <span class="text-[10px] text-[#888]">
+            {{ t.name }}
+          </span>
+        </div>
         }
       </div>
+    
     </div>
   </aside>
 </section>
